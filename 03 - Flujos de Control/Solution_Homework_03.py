@@ -133,5 +133,62 @@ print('Cantidad de ciclos: ' + str(ciclos_con_break))
 print('Se optimizó a un ' + str(ciclos_con_break/ciclos_sin_break) + '% de ciclos aplicando break')
 
 "12) Si la cantidad de números que se evalúa es mayor a treinta, esa optimización crece?"
+# Yes
+
+"13) Aplicando continue, armar un ciclo while que solo imprima los valores divisibles por 12, dentro del rango de números de 100 a 300"
+# In[1]:
+n=99
+while n < 301:
+    n += 1
+    if (n % 12 != 0):
+        continue
+    print(n, "es divisible por 12")
+# %%
+
+"14) Utilizar la función **input()** que permite hacer ingresos por teclado, para encontrar números primos y dar la opción al usario de buscar el siguiente"
+# In[2]:
+num = input("ingresar el numero: ")
+num = int(num)
+
+ciclos_con_break = 0
+sigue = 1
+primo = True
+m=1
+
+while (sigue == 1):
+    n=2
+    while n < num:
+        ciclos_con_break += 1
+        if (num % n == 0):
+            #print(num, "no es primo")
+            primo = False
+            break
+        n += 1
+    if (primo):
+        print(num, "es primo")
+        print(input("desea encontrar el siguiente primo: "))
+        if (input() != "1"):
+            print("Gracias")
+            break
+    else:
+        primo=True
+    num += 1
+
+# %%
 
 
+"15) Crear un ciclo while que encuentre dentro del rango de 100 a 300 el primer número divisible por 3 y además múltiplo de 6"
+
+# In[3]:
+n=99
+while (n < 301):
+    n += 1
+    if (n % 3 != 0):
+        continue
+    elif (n % 6 != 0):
+        continue
+    else:
+        print(n, "es divisible por 3 y multiplo de 6")
+        break
+
+# %%
