@@ -1,12 +1,12 @@
 "1) A partir de una lista vacía, utilizar un ciclo while para cargar allí números negativos del -15 al -1"
 # In[1]:
-list = []
+lista = []
 a = -1   # numero mayor
 b = -15  # numero menor
 
 for i in range(0,a-b+1):
-    list.append(b+i)
-print(list)
+    lista.append(b+i)
+print(lista)
 #%%
 
 "2) ¿Con un ciclo while sería posible recorrer la lista para imprimir sólo los números pares?"
@@ -98,5 +98,53 @@ for i in dicc:
 
 "12) Convertir en una lista la variable cadena del punto 10 y luego recorrerla con un iterador"
 # In[12]:
-list(frase)
+frase = "Hola Mundo nn"
+print(iter(list(frase)))
+for elem in list(frase):
+    print(elem)
 #%%
+
+"13) Crear dos listas y unirlas en una tupla utilizando la función zip"
+# In[13]:
+lista_1 = list(range(0,5))
+lista_2 = list(range(5,10))
+
+lista_3 = tuple(zip(lista_1,lista_2))
+print(lista_3)
+# %%
+
+"14) A partir de la siguiente lista de números, crear una nueva sólo si el número es divisible por 7<br>"
+# In[14]:
+lis = [18,21,29,32,35,42,56,60,63,71,84,90,91,100]
+divi_7 = []
+for i in range(0,len(lis)):
+    if lis[i] % 7 == 0:
+        divi_7.append(lis[i])
+print(divi_7)
+#%%
+
+"15) A partir de la lista de a continuación, contar la cantidad total de elementos que contiene, teniendo en cuenta que un elemento de la lista podría ser otra lista:<br>"
+"lis = [[1,2,3,4],'rojo','verde',[True,False,False],['uno','dos','tres']]"
+# In[15]:
+contador = 0
+for i in range(0,len(lis)):
+    if (type(lis[i])==list):
+        contador = contador + len(lis[i])
+    else:
+        contador += 1
+
+print(contador)
+#%%
+
+"16) Tomar la lista del punto anterior y convertir cada elemento en una lista si no lo es"
+
+# In[16]:
+for indice, elemento in enumerate(lis):
+    if (type(elemento) != list):
+        lis[indice]=[elemento]
+print(lis)
+
+print(lis)
+#%%
+
+
